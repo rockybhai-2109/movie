@@ -68,7 +68,7 @@ async def tts(client, message):
         except:pass
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client:Client, message): 
-    pm_mode = False
+    pm_mode = True
     try:
          data = message.command[1]
          if data.startswith('pm_mode_'):
@@ -865,3 +865,4 @@ async def set_time_3(client, message):
         return await message.reply_text("Command Incomplete!")   
     await save_group_settings(grp_id, 'third_verify_time', time)
     await message.reply_text(f"Successfully set 1st verify time for {title}\n\nTime is - <code>{time}</code>")
+
